@@ -4,151 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>UT Putnam Practice</title>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Saira+Stencil+One&display=swap');
-
-        @import url('https://fonts.googleapis.com/css2?family=Oxanium:wght@200..800&family=Saira+Stencil+One&display=swap');
-
-        html {
-            overflow-x: hidden;
-        }
-
-        .title {
-            font-family: 'Saira Stencil One';
-            font-size: 50pt;
-            margin: 0px;
-            padding: 30pt max(calc(20% - 100pt), 10pt);
-            white-space: nowrap;
-        }
-
-        nav {
-            border-bottom: 10px solid #BF5700;
-            border-top: 10px solid #BF5700;
-
-            background-image: url(Triangles6.png);
-            background-repeat: repeat;
-            background-blend-mode: multiply;
-            background-size: 300px;
-            background-color: #2b2a2a;
-            z-index: 1;
-        }
-
-        body {
-            color: #BF5700;
-            background-color: #323235;
-            margin: 0;
-            padding: 0;
-        }
-
-        /* Set the canvas container to relative positioning and ensure it doesn't overflow */
-        .canvas-container {
-            position: relative;
-            height: 3800px; /* Full viewport height minus footer height */
-            overflow: hidden; /* Clip any overflow content */
-        }
-
-        /* Keep canvas width fixed but allow its height to be contained in the container */
-        canvas {
-            position: absolute;
-            top: 15px;
-            z-index: 1;
-            margin-left: calc(30vw - 350px);
-            width: calc(60vw + 800px); /* Keep original width for drawings */
-            height: auto; /* Allow the height to scale proportionally */
-            max-height: none; /* Allow canvas height to extend as needed */
-        }
-
-        .overText {
-            position: relative;
-            z-index: 2;
-            background-color: #2b2a2aD0;
-            width: 450px;
-            height: 500px;
-            padding: 50px 75px;
-            clip-path: path("M0,0 Q300,100 600,0 Q500,300 600,600 Q300,500 0,600 Q100,300 0,0"); 
-
-            text-align: center;
-        }
-
-        .text1 {
-            margin: 100px 0px 0px calc(60vw - 300px);
-        }
-
-        .text2 {
-            margin: 100px 0px 100px calc(10px + 5vw);
-        }
-
-        .text3 {    
-            margin: 100px 0px 100px calc(50vw - 300px);
-        }
-        .text4 {
-            margin: 200px calc(10px + 10vw) 100px auto;
-        }
-        .text5 {
-            margin: 200px 0px 100px calc(10px + 15vw);
-        }
-
-        h2 {
-            padding: 0px;
-            text-decoration: underline;
-            font-family: 'Saira Stencil One';
-            font-size: 45px;
-            margin: 40px 0px 0px 0px;
-        }
-
-        p {
-            font-size: 30px;
-            font-family: 'Oxanium';
-            font-weight: 700;
-            color: #D0D0C0;
-            padding: 0px 10px;
-            margin: 10px 5px 30px 5px;
-        }
-
-        a {
-            color: rgb(130, 30, 245);
-        }
-
-        .spacedTitle {
-            padding: 10px 0px 50px 0px;
-        }
-
-        footer {
-            width: 100%;
-            height: 300px;            /* Makes the footer full width */
-
-            background-image: url(Triangles6.png);
-            background-repeat: repeat;
-            background-blend-mode: multiply;
-            background-size: 300px;
-            background-color: #2b2a2a;
-
-            border-top: 10px solid #BF5700;
-            border-bottom: 10px solid #BF5700;
-            z-index: 2;             /* Ensure it's above other content */
-        }
-
-        footer {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-
-        .footer-title {
-            font-family: 'Saira Stencil One';
-            font-size: 50pt;
-            margin: 0px;
-            padding: 20px 0px;
-            white-space: nowrap;
-        }
-        h3 {
-            font-size: 30px;
-            font-family: 'Oxanium';
-            font-weight: 700;
-            padding: 20px calc(20px + 10vw);
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <nav>
@@ -192,8 +48,8 @@
             ctx.lineWidth = 2;
             ctx.stroke();
             ctx.beginPath();
-            ctx.moveTo(startX+3, startY);
-            ctx.lineTo(endX+3, endY);
+            ctx.moveTo(startX, startY+2);
+            ctx.lineTo(endX, endY+2);
             ctx.strokeStyle = `rgb(191, 87, 0)`; // Color changes for each line
             ctx.lineWidth = 2;
             ctx.stroke();
@@ -209,7 +65,7 @@
     <div class="overText text2">
         <h2>Putnam Exam? Huh?</h2>
         <p>Unlike "normal" math tests, the Putnam Exam challenges you based off of problem-solving creativity, instead of classes taken and formulas memorized.</p>
-        <p>It is regarded as the hardest undergraduate math exam :).</p>
+        <p>It's regarded as the hardest undergraduate math exam.</p>
     </div>
     <div class="overText text3">
         <h2>Why should I join?</h2>
