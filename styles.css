@@ -8,7 +8,7 @@ html {
 
 .title {
     font-family: 'Saira Stencil One';
-    font-size: 50pt;
+    font-size: clamp(10pt, 8vw, 50pt);
     margin: 0px;
     padding: 10pt max(calc(20% - 100pt), 10pt);
     white-space: nowrap;
@@ -32,29 +32,23 @@ body {
     margin: 0;
     padding: 0;
 
-    /* background-image: url(Triangles6.png);
-    background-color: rgb(153, 153, 153);
-    background-repeat: repeat;
-    background-blend-mode: multiply;
-    background-size: 400px; */
 }
 
-/* Set the canvas container to relative positioning and ensure it doesn't overflow */
+
 .canvas-container {
     position: relative;
-    height: 3500px; /* Full viewport height minus footer height */
-    overflow: hidden; /* Clip any overflow content */
+    height: 3500px;
+    overflow: hidden;
 }
 
-/* Keep canvas width fixed but allow its height to be contained in the container */
 canvas {
     position: absolute;
     top: 15px;
     z-index: 1;
     margin-left: calc(30vw - 350px);
-    width: calc(60vw + 800px); /* Keep original width for drawings */
-    height: auto; /* Allow the height to scale proportionally */
-    max-height: none; /* Allow canvas height to extend as needed */
+    width: calc(60vw + 800px);
+    height: auto;
+    max-height: none;
 }
 
 .overText {
@@ -131,19 +125,74 @@ footer {
     display: flex;
     align-items: center;
     justify-content: center;
+    min-height: 300px;
 }
 
 
 .footer-title {
     font-family: 'Saira Stencil One';
     font-size: 50pt;
-    margin: 0px;
+    margin: 10px 0 10px 30px;
     padding: 20px 0px;
     white-space: nowrap;
 }
 h3 {
-    font-size: 30px;
+    font-size: 15pt;
     font-family: 'Oxanium';
     font-weight: 700;
     padding: 20px calc(20px + 10vw);
+    margin: 10px;
 }
+
+@media (max-width: 550px) {
+    .title {
+        text-align: center;
+    }
+    .overText {
+        width: 240px;
+        height: 270px;
+        padding: 15px 30px;
+        clip-path: path("M0,0 Q150,50 300,0 Q250,150 300,300 Q150,250 0,300 Q50,150 0,0"); 
+    }
+    .text1 {
+        margin: 50px auto;
+    }
+    .text2 {
+        margin: 50px auto;
+    }
+    .text3 {
+        margin: 50px auto;
+    }
+    .text4 {
+        margin: 50px auto;
+    }
+    .text5 {
+        margin: 50px auto;
+    }
+    .overText h2 {
+        font-size: 20px;
+    }
+    .overText p {
+        font-size: 15px;
+        margin: 10px 0px;
+    }
+    .spacedTitle {
+        padding: 0px 0px 10px 0px;
+    }
+    .canvas-container {
+        height: 2000px;
+    }
+
+    footer {
+        flex-direction: column;
+    }
+    .footer-title {
+        font-size: 25pt;
+        margin: 10px;
+    }
+    .footer-info {
+        font-size: 9pt;
+        margin: 10px;
+    }
+
+} 
